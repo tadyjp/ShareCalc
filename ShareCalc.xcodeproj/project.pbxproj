@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC019D0E61600295E83 /* AppDelegate.swift */; };
+		13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */; };
+		13CADFC619D0E61600295E83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC519D0E61600295E83 /* ViewController.swift */; };
+		13CADFC919D0E61600295E83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CADFC719D0E61600295E83 /* Main.storyboard */; };
+		13CADFCB19D0E61600295E83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CADFCA19D0E61600295E83 /* Images.xcassets */; };
+		13CADFCE19D0E61600295E83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CADFCC19D0E61600295E83 /* LaunchScreen.xib */; };
+		13CADFDA19D0E61700295E83 /* ShareCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFD919D0E61700295E83 /* ShareCalcTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13CADFD419D0E61700295E83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13CADFB319D0E61600295E83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13CADFBA19D0E61600295E83;
+			remoteInfo = ShareCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13CADFBB19D0E61600295E83 /* ShareCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13CADFBF19D0E61600295E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13CADFC019D0E61600295E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		13CADFC319D0E61600295E83 /* ShareCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShareCalc.xcdatamodel; sourceTree = "<group>"; };
+		13CADFC519D0E61600295E83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13CADFC819D0E61600295E83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		13CADFCA19D0E61600295E83 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		13CADFCD19D0E61600295E83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		13CADFD319D0E61700295E83 /* ShareCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13CADFD819D0E61700295E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13CADFD919D0E61700295E83 /* ShareCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCalcTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13CADFB819D0E61600295E83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13CADFD019D0E61700295E83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13CADFB219D0E61600295E83 = {
+			isa = PBXGroup;
+			children = (
+				13CADFBD19D0E61600295E83 /* ShareCalc */,
+				13CADFD619D0E61700295E83 /* ShareCalcTests */,
+				13CADFBC19D0E61600295E83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13CADFBC19D0E61600295E83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13CADFBB19D0E61600295E83 /* ShareCalc.app */,
+				13CADFD319D0E61700295E83 /* ShareCalcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13CADFBD19D0E61600295E83 /* ShareCalc */ = {
+			isa = PBXGroup;
+			children = (
+				13CADFC019D0E61600295E83 /* AppDelegate.swift */,
+				13CADFC519D0E61600295E83 /* ViewController.swift */,
+				13CADFC719D0E61600295E83 /* Main.storyboard */,
+				13CADFCA19D0E61600295E83 /* Images.xcassets */,
+				13CADFCC19D0E61600295E83 /* LaunchScreen.xib */,
+				13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */,
+				13CADFBE19D0E61600295E83 /* Supporting Files */,
+			);
+			path = ShareCalc;
+			sourceTree = "<group>";
+		};
+		13CADFBE19D0E61600295E83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13CADFBF19D0E61600295E83 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13CADFD619D0E61700295E83 /* ShareCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				13CADFD919D0E61700295E83 /* ShareCalcTests.swift */,
+				13CADFD719D0E61700295E83 /* Supporting Files */,
+			);
+			path = ShareCalcTests;
+			sourceTree = "<group>";
+		};
+		13CADFD719D0E61700295E83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13CADFD819D0E61700295E83 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13CADFBA19D0E61600295E83 /* ShareCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13CADFDD19D0E61700295E83 /* Build configuration list for PBXNativeTarget "ShareCalc" */;
+			buildPhases = (
+				13CADFB719D0E61600295E83 /* Sources */,
+				13CADFB819D0E61600295E83 /* Frameworks */,
+				13CADFB919D0E61600295E83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCalc;
+			productName = ShareCalc;
+			productReference = 13CADFBB19D0E61600295E83 /* ShareCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		13CADFD219D0E61700295E83 /* ShareCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13CADFE019D0E61700295E83 /* Build configuration list for PBXNativeTarget "ShareCalcTests" */;
+			buildPhases = (
+				13CADFCF19D0E61700295E83 /* Sources */,
+				13CADFD019D0E61700295E83 /* Frameworks */,
+				13CADFD119D0E61700295E83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13CADFD519D0E61700295E83 /* PBXTargetDependency */,
+			);
+			name = ShareCalcTests;
+			productName = ShareCalcTests;
+			productReference = 13CADFD319D0E61700295E83 /* ShareCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13CADFB319D0E61600295E83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = tady;
+				TargetAttributes = {
+					13CADFBA19D0E61600295E83 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					13CADFD219D0E61700295E83 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 13CADFBA19D0E61600295E83;
+					};
+				};
+			};
+			buildConfigurationList = 13CADFB619D0E61600295E83 /* Build configuration list for PBXProject "ShareCalc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13CADFB219D0E61600295E83;
+			productRefGroup = 13CADFBC19D0E61600295E83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13CADFBA19D0E61600295E83 /* ShareCalc */,
+				13CADFD219D0E61700295E83 /* ShareCalcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13CADFB919D0E61600295E83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CADFC919D0E61600295E83 /* Main.storyboard in Resources */,
+				13CADFCE19D0E61600295E83 /* LaunchScreen.xib in Resources */,
+				13CADFCB19D0E61600295E83 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13CADFD119D0E61700295E83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13CADFB719D0E61600295E83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CADFC619D0E61600295E83 /* ViewController.swift in Sources */,
+				13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */,
+				13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13CADFCF19D0E61700295E83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CADFDA19D0E61700295E83 /* ShareCalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13CADFD519D0E61700295E83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13CADFBA19D0E61600295E83 /* ShareCalc */;
+			targetProxy = 13CADFD419D0E61700295E83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13CADFC719D0E61600295E83 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13CADFC819D0E61600295E83 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		13CADFCC19D0E61600295E83 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13CADFCD19D0E61600295E83 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13CADFDB19D0E61700295E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		13CADFDC19D0E61700295E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13CADFDE19D0E61700295E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ShareCalc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		13CADFDF19D0E61700295E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ShareCalc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		13CADFE119D0E61700295E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShareCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareCalc.app/ShareCalc";
+			};
+			name = Debug;
+		};
+		13CADFE219D0E61700295E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShareCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareCalc.app/ShareCalc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13CADFB619D0E61600295E83 /* Build configuration list for PBXProject "ShareCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13CADFDB19D0E61700295E83 /* Debug */,
+				13CADFDC19D0E61700295E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13CADFDD19D0E61700295E83 /* Build configuration list for PBXNativeTarget "ShareCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13CADFDE19D0E61700295E83 /* Debug */,
+				13CADFDF19D0E61700295E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		13CADFE019D0E61700295E83 /* Build configuration list for PBXNativeTarget "ShareCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13CADFE119D0E61700295E83 /* Debug */,
+				13CADFE219D0E61700295E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				13CADFC319D0E61600295E83 /* ShareCalc.xcdatamodel */,
+			);
+			currentVersion = 13CADFC319D0E61600295E83 /* ShareCalc.xcdatamodel */;
+			path = ShareCalc.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 13CADFB319D0E61600295E83 /* Project object */;
+}
