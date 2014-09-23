@@ -10,7 +10,12 @@ import UIKit
 
 class ExpenseEditTableViewController: UITableViewController {
 
-    var indexPathRow: Int?
+    var expenseIndexPathRow: Int?
+
+    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var typeField: UITextField!
+    @IBOutlet weak var payerField: UITextField!
+    @IBOutlet weak var valueField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +30,13 @@ class ExpenseEditTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        
+        self.dateField.text = app.expenseList![self.expenseIndexPathRow!].dateWithFormat
+        self.typeField.text = app.expenseList![self.expenseIndexPathRow!].type
+        self.payerField.text = app.expenseList![self.expenseIndexPathRow!].payer
+        self.valueField.text = String(app.expenseList![self.expenseIndexPathRow!].value)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +46,11 @@ class ExpenseEditTableViewController: UITableViewController {
     
     func doneEdit() {
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        app.expenseList![self.indexPathRow!].value = 9999
+//        app.expenseList![self.indexPathRow!].payer = self.payerField.text
+//        app.expenseList![self.indexPathRow!].type = self.typeField.text
+//        if let value = self.valueField.text.toInt() {
+//            app.expenseList![self.indexPathRow!].value = value
+//        }
         
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -101,14 +116,21 @@ class ExpenseEditTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let expenseEditSelectionTableViewController: ExpenseEditSelectionTableViewController = segue.destinationViewController as ExpenseEditSelectionTableViewController
+        expenseEditSelectionTableViewController.expenseIndexPathRow = self.expenseIndexPathRow
+
+        switch segue.identifier {
+        case "toExpenseTypeEdit":
+            expenseEditSelectionTableViewController.choiceType = "type"
+        case "toExpensePayerEdit":
+            expenseEditSelectionTableViewController.choiceType = "payer"
+        default:
+            break
+        }
     }
-    */
 
 }

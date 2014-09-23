@@ -10,10 +10,10 @@ import UIKit
 
 class ExpenseTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var expenseDate: UILabel!
-    @IBOutlet weak var expensePayer: UILabel!
-    @IBOutlet weak var expenseType: UILabel!
-    @IBOutlet weak var expenseValue: UILabel!
+    @IBOutlet weak var dateField: UILabel!
+    @IBOutlet weak var payerField: UILabel!
+    @IBOutlet weak var typeField: UILabel!
+    @IBOutlet weak var valueField: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

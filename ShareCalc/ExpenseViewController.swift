@@ -23,13 +23,11 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
             // Do nothing
         } else {
             app.expenseList = []
-            app.expenseList!.append(Expense(date: NSDate(), payer: "Yamada", type: "Highway", value: 22000))
+            app.expenseList!.append(Expense(date: NSDate(), payer: "Yamada", type: "Highway", value: 25000))
             app.expenseList!.append(Expense(date: NSDate(), payer: "Suzuki", type: "Lunch", value: 12000))
             app.expenseList!.append(Expense(date: NSDate(), payer: "Sato", type: "Railway", value: 19000))
             app.expenseList!.append(Expense(date: NSDate(), payer: "Kato", type: "Gas", value: 6700))
         }
-        
-        println("app.expenseList!: \(app.expenseList!)")
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -44,7 +42,6 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        
         return app.expenseList!.count
     }
     
@@ -52,10 +49,10 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
         let cell: ExpenseTableViewCell = self.expenseTableView.dequeueReusableCellWithIdentifier("ExpenseCell") as ExpenseTableViewCell
-        cell.expenseDate.text = app.expenseList![indexPath.row].dateWithFormat()
-        cell.expenseValue.text = String(app.expenseList![indexPath.row].value)
-        cell.expenseType.text = app.expenseList![indexPath.row].type
-        cell.expensePayer.text = app.expenseList![indexPath.row].payer
+        cell.dateField.text = app.expenseList![indexPath.row].dateWithFormat
+        cell.valueField.text = String(app.expenseList![indexPath.row].value)
+        cell.typeField.text = app.expenseList![indexPath.row].type
+        cell.payerField.text = app.expenseList![indexPath.row].payer
         return cell;
     }
 
@@ -68,7 +65,7 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
         if (segue.identifier == "toExpenseEdit") {
             let expenseEditViewController: ExpenseEditTableViewController = segue.destinationViewController as ExpenseEditTableViewController
             let indexPath: NSIndexPath = self.expenseTableView.indexPathForSelectedRow()!
-            expenseEditViewController.indexPathRow = indexPath.row
+            expenseEditViewController.expenseIndexPathRow = indexPath.row
         }
     }
 

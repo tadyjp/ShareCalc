@@ -18,6 +18,7 @@
 		13CADFDA19D0E61700295E83 /* ShareCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFD919D0E61700295E83 /* ShareCalcTests.swift */; };
 		13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFE519D0F18000295E83 /* ExpenseViewController.swift */; };
 		13CADFE819D0F54300295E83 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */; };
+		13CF2FC819D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		13CADFD919D0E61700295E83 /* ShareCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCalcTests.swift; sourceTree = "<group>"; };
 		13CADFE519D0F18000295E83 /* ExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseEditSelectionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				13CADFE519D0F18000295E83 /* ExpenseViewController.swift */,
 				13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */,
 				13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */,
+				13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */,
 				13CADFCA19D0E61600295E83 /* Images.xcassets */,
 				13CADFCC19D0E61600295E83 /* LaunchScreen.xib */,
 				13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */,
@@ -238,6 +241,7 @@
 				13CADFE819D0F54300295E83 /* ExpenseTableViewCell.swift in Sources */,
 				13CADFC619D0E61600295E83 /* ViewController.swift in Sources */,
 				13C0E6AA19D1268C00FE6507 /* ExpenseEditTableViewController.swift in Sources */,
+				13CF2FC819D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift in Sources */,
 				13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */,
 				13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */,
 				13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */,

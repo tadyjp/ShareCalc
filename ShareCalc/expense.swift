@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Expense {
+class Expense: Printable {
     var date: NSDate
     var payer: String
     var type: String
@@ -21,7 +21,11 @@ class Expense {
         self.value = value
     }
     
-    func dateWithFormat() -> String {
+    var description: String {
+        return "Expense<date: '\(self.dateWithFormat)', payer: '\(self.payer)', type: '\(self.type)', value: \(self.value)>"
+    }
+    
+    var dateWithFormat: String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
