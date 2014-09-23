@@ -14,6 +14,8 @@
 		13CADFCB19D0E61600295E83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CADFCA19D0E61600295E83 /* Images.xcassets */; };
 		13CADFCE19D0E61600295E83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CADFCC19D0E61600295E83 /* LaunchScreen.xib */; };
 		13CADFDA19D0E61700295E83 /* ShareCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFD919D0E61700295E83 /* ShareCalcTests.swift */; };
+		13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFE519D0F18000295E83 /* ExpenseViewController.swift */; };
+		13CADFE819D0F54300295E83 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		13CADFD319D0E61700295E83 /* ShareCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CADFD819D0E61700295E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13CADFD919D0E61700295E83 /* ShareCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCalcTests.swift; sourceTree = "<group>"; };
+		13CADFE519D0F18000295E83 /* ExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +83,11 @@
 		13CADFBD19D0E61600295E83 /* ShareCalc */ = {
 			isa = PBXGroup;
 			children = (
+				13CADFC719D0E61600295E83 /* Main.storyboard */,
 				13CADFC019D0E61600295E83 /* AppDelegate.swift */,
 				13CADFC519D0E61600295E83 /* ViewController.swift */,
-				13CADFC719D0E61600295E83 /* Main.storyboard */,
+				13CADFE519D0F18000295E83 /* ExpenseViewController.swift */,
+				13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */,
 				13CADFCA19D0E61600295E83 /* Images.xcassets */,
 				13CADFCC19D0E61600295E83 /* LaunchScreen.xib */,
 				13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */,
@@ -215,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CADFE819D0F54300295E83 /* ExpenseTableViewCell.swift in Sources */,
 				13CADFC619D0E61600295E83 /* ViewController.swift in Sources */,
+				13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */,
 				13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */,
 				13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */,
 			);
