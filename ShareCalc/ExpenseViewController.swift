@@ -12,25 +12,29 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var expenseTableView: UITableView!
 
-    var expenseList: [Expense]?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        
         if let expenseList = app.expenseList {
-            self.expenseList = app.expenseList
+            // Do nothing
         } else {
             app.expenseList = []
-            self.expenseList = app.expenseList
+            app.expenseList!.append(Expense(date: NSDate(), payer: "Yamada", type: "Highway", value: 22000))
+            app.expenseList!.append(Expense(date: NSDate(), payer: "Suzuki", type: "Lunch", value: 12000))
+            app.expenseList!.append(Expense(date: NSDate(), payer: "Sato", type: "Railway", value: 19000))
+            app.expenseList!.append(Expense(date: NSDate(), payer: "Kato", type: "Gas", value: 6700))
         }
         
-        self.expenseList!.append(Expense(date: NSDate(), payer: "Yamada", type: "Highway", value: 22000))
-        self.expenseList!.append(Expense(date: NSDate(), payer: "Suzuki", type: "Lunch", value: 12000))
-        self.expenseList!.append(Expense(date: NSDate(), payer: "Sato", type: "Railway", value: 19000))
-        self.expenseList!.append(Expense(date: NSDate(), payer: "Kato", type: "Gas", value: 6700))
+        println("app.expenseList!: \(app.expenseList!)")
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.expenseTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,15 +43,19 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.expenseList!.count
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        
+        return app.expenseList!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+
         let cell: ExpenseTableViewCell = self.expenseTableView.dequeueReusableCellWithIdentifier("ExpenseCell") as ExpenseTableViewCell
-        cell.expenseDate.text = self.expenseList![indexPath.row].dateWithFormat()
-        cell.expenseValue.text = String(self.expenseList![indexPath.row].value)
-        cell.expenseType.text = self.expenseList![indexPath.row].type
-        cell.expensePayer.text = self.expenseList![indexPath.row].payer
+        cell.expenseDate.text = app.expenseList![indexPath.row].dateWithFormat()
+        cell.expenseValue.text = String(app.expenseList![indexPath.row].value)
+        cell.expenseType.text = app.expenseList![indexPath.row].type
+        cell.expensePayer.text = app.expenseList![indexPath.row].payer
         return cell;
     }
 

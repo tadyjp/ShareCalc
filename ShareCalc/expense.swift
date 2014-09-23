@@ -9,10 +9,10 @@
 import Foundation
 
 class Expense {
-    let date: NSDate
-    let payer: String
-    let type: String
-    let value: Int
+    var date: NSDate
+    var payer: String
+    var type: String
+    var value: Int
     
     init(date: NSDate, payer: String, type: String, value: Int) {
         self.date = date

@@ -11,7 +11,6 @@ import UIKit
 class ExpenseEditTableViewController: UITableViewController {
 
     var indexPathRow: Int?
-    var expenseList: [Expense]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +19,25 @@ class ExpenseEditTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        self.expenseList = app.expenseList
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "doneEdit")
+        self.navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func doneEdit() {
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        app.expenseList![self.indexPathRow!].value = 9999
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     // MARK: - Table view data source
