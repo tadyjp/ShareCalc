@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13C0E6A819D119F200FE6507 /* expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C0E6A719D119F200FE6507 /* expense.swift */; };
+		13C0E6AA19D1268C00FE6507 /* ExpenseEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */; };
 		13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC019D0E61600295E83 /* AppDelegate.swift */; };
 		13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */; };
 		13CADFC619D0E61600295E83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC519D0E61600295E83 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13C0E6A719D119F200FE6507 /* expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expense.swift; sourceTree = "<group>"; };
+		13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseEditTableViewController.swift; sourceTree = "<group>"; };
 		13CADFBB19D0E61600295E83 /* ShareCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CADFBF19D0E61600295E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13CADFC019D0E61600295E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13C0E6A619D119D200FE6507 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				13C0E6A719D119F200FE6507 /* expense.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		13CADFB219D0E61600295E83 = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +97,11 @@
 			children = (
 				13CADFC719D0E61600295E83 /* Main.storyboard */,
 				13CADFC019D0E61600295E83 /* AppDelegate.swift */,
+				13C0E6A619D119D200FE6507 /* models */,
 				13CADFC519D0E61600295E83 /* ViewController.swift */,
 				13CADFE519D0F18000295E83 /* ExpenseViewController.swift */,
 				13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */,
+				13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */,
 				13CADFCA19D0E61600295E83 /* Images.xcassets */,
 				13CADFCC19D0E61600295E83 /* LaunchScreen.xib */,
 				13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */,
@@ -223,9 +237,11 @@
 			files = (
 				13CADFE819D0F54300295E83 /* ExpenseTableViewCell.swift in Sources */,
 				13CADFC619D0E61600295E83 /* ViewController.swift in Sources */,
+				13C0E6AA19D1268C00FE6507 /* ExpenseEditTableViewController.swift in Sources */,
 				13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */,
 				13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */,
 				13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */,
+				13C0E6A819D119F200FE6507 /* expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +433,7 @@
 				13CADFDF19D0E61700295E83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13CADFE019D0E61700295E83 /* Build configuration list for PBXNativeTarget "ShareCalcTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +442,7 @@
 				13CADFE219D0E61700295E83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
