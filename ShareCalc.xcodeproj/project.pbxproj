@@ -187,6 +187,7 @@
 				TargetAttributes = {
 					13CADFBA19D0E61600295E83 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 2T5Q6M53AQ;
 					};
 					13CADFD219D0E61700295E83 = {
 						CreatedOnToolsVersion = 6.0.1;

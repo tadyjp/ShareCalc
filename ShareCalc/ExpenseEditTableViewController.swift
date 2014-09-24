@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpenseEditTableViewController: UITableViewController {
+class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate {
 
     var expenseIndexPathRow: Int?
 
@@ -26,6 +26,13 @@ class ExpenseEditTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "doneEdit")
         self.navigationItem.rightBarButtonItem = doneButton
+        
+        
+        let datePicker: UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.DateAndTime
+        datePicker.addTarget(self, action: Selector("updateDateField:"), forControlEvents: UIControlEvents.ValueChanged)
+        self.dateField.inputView = datePicker
+        self.dateField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +60,13 @@ class ExpenseEditTableViewController: UITableViewController {
 //        }
         
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func updateDateField(picker: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        self.dateField.text = dateFormatter.stringFromDate(picker.date)
     }
 
     
