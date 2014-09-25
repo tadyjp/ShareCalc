@@ -12,6 +12,10 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var expenseTableView: UITableView!
 
+    @IBOutlet weak var totalValue: UILabel!
+    @IBOutlet weak var totalItems: UILabel!
+    @IBOutlet weak var totalPayers: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +37,12 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.expenseTableView.reloadData()
+        
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        self.totalValue.text = String(app.expenseList!.reduce(0, combine: {$0 + $1.value}))
+        self.totalItems.text = String(app.expenseList!.count)
+        self.totalPayers.text = String(app.expenseList!.count)
+        
     }
 
     override func didReceiveMemoryWarning() {

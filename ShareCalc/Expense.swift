@@ -26,9 +26,6 @@ class Expense: Printable {
     }
     
     var dateWithFormat: String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        return dateFormatter.stringFromDate(self.date)
+        return Helpers.formatDate(self.date)
     }
 }

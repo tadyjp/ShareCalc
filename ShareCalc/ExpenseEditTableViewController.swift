@@ -17,6 +17,8 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
     @IBOutlet weak var payerField: UITextField!
     @IBOutlet weak var valueField: UITextField!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +26,8 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "doneEdit")
-        self.navigationItem.rightBarButtonItem = doneButton
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "doneEdit")
+//        self.navigationItem.rightBarButtonItem = doneButton
         
         
         let datePicker: UIDatePicker = UIDatePicker()
@@ -33,13 +35,14 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
         datePicker.addTarget(self, action: Selector("updateDateField:"), forControlEvents: UIControlEvents.ValueChanged)
         self.dateField.inputView = datePicker
         self.dateField.delegate = self
+
+        self.valueField.addTarget(self, action: Selector("updateValueField:"), forControlEvents: UIControlEvents.EditingChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        
         self.dateField.text = app.expenseList![self.expenseIndexPathRow!].dateWithFormat
         self.typeField.text = app.expenseList![self.expenseIndexPathRow!].type
         self.payerField.text = app.expenseList![self.expenseIndexPathRow!].payer
@@ -51,22 +54,32 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    func doneEdit() {
-        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-//        app.expenseList![self.indexPathRow!].payer = self.payerField.text
-//        app.expenseList![self.indexPathRow!].type = self.typeField.text
+//    func doneEdit() {
+//        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+//        app.expenseList![self.expenseIndexPathRow!].payer = self.payerField.text
+//        app.expenseList![self.expenseIndexPathRow!].type = self.typeField.text
+//        app.expenseList![self.expenseIndexPathRow!].date = Helpers.parseDate(self.dateField.text)
 //        if let value = self.valueField.text.toInt() {
-//            app.expenseList![self.indexPathRow!].value = value
+//            app.expenseList![self.expenseIndexPathRow!].value = value
 //        }
-        
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+//        
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
     
     func updateDateField(picker: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        self.dateField.text = dateFormatter.stringFromDate(picker.date)
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        app.expenseList![self.expenseIndexPathRow!].date = picker.date
+        self.dateField.text = Helpers.formatDate(picker.date)
+    }
+
+    func updateValueField(sender: AnyObject) {
+        println("self.valueField.text = \(self.valueField.text)")
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        if let value = self.valueField.text.toInt() {
+            app.expenseList![self.expenseIndexPathRow!].value = value
+        } else {
+            app.expenseList![self.expenseIndexPathRow!].value = 0
+        }
     }
 
     
