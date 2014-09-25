@@ -41,8 +41,7 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         self.totalValue.text = String(app.expenseList!.reduce(0, combine: {$0 + $1.value}))
         self.totalItems.text = String(app.expenseList!.count)
-        self.totalPayers.text = String(app.expenseList!.count)
-        
+        self.totalPayers.text = String($.uniq(app.expenseList!.map({ (item) in item.payer })).count)
     }
 
     override func didReceiveMemoryWarning() {
