@@ -69,12 +69,17 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "toExpenseEdit") {
-            let expenseEditViewController: ExpenseEditTableViewController = segue.destinationViewController as ExpenseEditTableViewController
+        let expenseEditViewController: ExpenseEditTableViewController = segue.destinationViewController as ExpenseEditTableViewController
+
+        switch segue.identifier {
+        case "toExpenseEdit":
             let indexPath: NSIndexPath = self.expenseTableView.indexPathForSelectedRow()!
             expenseEditViewController.expenseIndexPathRow = indexPath.row
+            expenseEditViewController.actionType = "edit"
+        case "toExpenseAdd":
+            expenseEditViewController.actionType = "add"
+        default:
+            break
         }
     }
 

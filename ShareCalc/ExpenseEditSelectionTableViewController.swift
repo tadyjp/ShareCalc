@@ -10,7 +10,7 @@ import UIKit
 
 class ExpenseEditSelectionTableViewController: UITableViewController {
 
-    var expenseIndexPathRow: Int?
+    var editingExpense: Expense?
     var choiceList: [String]?
     var choiceType: String?
     
@@ -59,13 +59,12 @@ class ExpenseEditSelectionTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
         switch self.choiceType! {
         case "type":
-            app.expenseList![self.expenseIndexPathRow!].type = self.choiceList![indexPath.row]
+            self.editingExpense!.type = self.choiceList![indexPath.row]
         case "payer":
-            app.expenseList![self.expenseIndexPathRow!].payer = self.choiceList![indexPath.row]
+            self.editingExpense!.payer = self.choiceList![indexPath.row]
         default:
             break
         }

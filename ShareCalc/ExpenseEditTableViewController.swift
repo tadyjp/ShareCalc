@@ -11,13 +11,13 @@ import UIKit
 class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate {
 
     var expenseIndexPathRow: Int?
+    var actionType: String?
+    var editingExpense: Expense?
 
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var payerField: UITextField!
     @IBOutlet weak var valueField: UITextField!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,61 +26,93 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "doneEdit")
-//        self.navigationItem.rightBarButtonItem = doneButton
-        
+        if self.actionType! == "add" {
+            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("doneEdit"))
+            self.navigationItem.rightBarButtonItem = doneButton
+        }
         
         let datePicker: UIDatePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePickerMode.DateAndTime
-        datePicker.addTarget(self, action: Selector("updateDateField:"), forControlEvents: UIControlEvents.ValueChanged)
+//        datePicker.addTarget(self, action: Selector("updateDateField:"), forControlEvents: UIControlEvents.ValueChanged)
         self.dateField.inputView = datePicker
         self.dateField.delegate = self
 
-        self.valueField.addTarget(self, action: Selector("updateValueField:"), forControlEvents: UIControlEvents.EditingChanged)
+//        self.valueField.addTarget(self, action: Selector("updateValueField:"), forControlEvents: UIControlEvents.EditingChanged)
+        
+        switch self.actionType! {
+        case "edit":
+            let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+            self.editingExpense = app.expenseList![self.expenseIndexPathRow!]
+        case "add":
+            self.editingExpense = Expense(date: NSDate(), payer: "Enter type...", type: "Enter payer...", value: 0)
+        default:
+            break
+        }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        self.dateField.text = app.expenseList![self.expenseIndexPathRow!].dateWithFormat
-        self.typeField.text = app.expenseList![self.expenseIndexPathRow!].type
-        self.payerField.text = app.expenseList![self.expenseIndexPathRow!].payer
-        self.valueField.text = String(app.expenseList![self.expenseIndexPathRow!].value)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-//    func doneEdit() {
-//        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-//        app.expenseList![self.expenseIndexPathRow!].payer = self.payerField.text
-//        app.expenseList![self.expenseIndexPathRow!].type = self.typeField.text
-//        app.expenseList![self.expenseIndexPathRow!].date = Helpers.parseDate(self.dateField.text)
-//        if let value = self.valueField.text.toInt() {
-//            app.expenseList![self.expenseIndexPathRow!].value = value
-//        }
-//        
-//        self.navigationController?.popViewControllerAnimated(true)
-//    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.dateField.text = self.editingExpense!.dateWithFormat
+        self.typeField.text = self.editingExpense!.type
+        self.payerField.text = self.editingExpense!.payer
+        self.valueField.text = String(self.editingExpense!.value)
+    }
     
-    func updateDateField(picker: UIDatePicker) {
-        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        app.expenseList![self.expenseIndexPathRow!].date = picker.date
-        self.dateField.text = Helpers.formatDate(picker.date)
+    override func viewWillDisappear(animated: Bool) {
+        self.updateEditingExpense()
+        
+        if !$.contains(self.navigationController!.viewControllers as [UIViewController], value: self) {
+            let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+
+            if self.actionType! == "edit" {
+                app.expenseList![self.expenseIndexPathRow!] = self.editingExpense!
+            }
+        }
+        
+        super.viewWillDisappear(animated)
     }
 
-    func updateValueField(sender: AnyObject) {
-        println("self.valueField.text = \(self.valueField.text)")
-        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+    func updateEditingExpense() {
+        self.editingExpense!.date = Helpers.parseDate(self.dateField.text)
+        self.editingExpense!.type = self.typeField.text
+        self.editingExpense!.payer = self.payerField.text
         if let value = self.valueField.text.toInt() {
-            app.expenseList![self.expenseIndexPathRow!].value = value
+            self.editingExpense!.value = value
         } else {
-            app.expenseList![self.expenseIndexPathRow!].value = 0
+            self.editingExpense!.value = 0
         }
     }
+    
+    func doneEdit() {
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        app.expenseList!.append(self.editingExpense!)        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+//    func updateDateField(picker: UIDatePicker) {
+//        if self.actionType! == "edit" {
+//            let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+//            app.expenseList![self.expenseIndexPathRow!].date = picker.date
+//            self.dateField.text = Helpers.formatDate(picker.date)
+//        }
+//    }
+//
+//    func updateValueField(sender: AnyObject) {
+//        if self.actionType! == "edit" {
+//            let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+//            if let value = self.valueField.text.toInt() {
+//                app.expenseList![self.expenseIndexPathRow!].value = value
+//            } else {
+//                app.expenseList![self.expenseIndexPathRow!].value = 0
+//            }
+//        }
+//    }
 
     
     // MARK: - Table view data source
@@ -148,8 +180,10 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        self.updateEditingExpense()
+        
         let expenseEditSelectionTableViewController: ExpenseEditSelectionTableViewController = segue.destinationViewController as ExpenseEditSelectionTableViewController
-        expenseEditSelectionTableViewController.expenseIndexPathRow = self.expenseIndexPathRow
+        expenseEditSelectionTableViewController.editingExpense = self.editingExpense!
 
         switch segue.identifier {
         case "toExpenseTypeEdit":
