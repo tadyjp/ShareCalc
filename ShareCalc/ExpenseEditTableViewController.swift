@@ -20,8 +20,6 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
     @IBOutlet weak var valueField: UITextField!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,12 +40,14 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
         switch self.actionType! {
         case "edit":
             let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-            self.editingExpense = app.expenseList![self.expenseIndexPathRow!]
+            self.editingExpense = app.expenseList[self.expenseIndexPathRow!]
         case "add":
             self.editingExpense = Expense(date: NSDate(), payer: "Enter type...", type: "Enter payer...", value: 0)
         default:
             break
         }
+
+        super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,13 +56,13 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.dateField.text = self.editingExpense!.dateWithFormat
         self.typeField.text = self.editingExpense!.type
         self.payerField.text = self.editingExpense!.payer
         self.valueField.text = String(self.editingExpense!.value)
-    }
+
+        super.viewWillAppear(animated)
+}
     
     override func viewWillDisappear(animated: Bool) {
         self.updateEditingExpense()
@@ -71,7 +71,7 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
             let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
             if self.actionType! == "edit" {
-                app.expenseList![self.expenseIndexPathRow!] = self.editingExpense!
+                app.expenseList[self.expenseIndexPathRow!] = self.editingExpense!
             }
         }
         
@@ -91,14 +91,14 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
     
     func doneEdit() {
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        app.expenseList!.append(self.editingExpense!)        
+        app.expenseList.append(self.editingExpense!)        
         self.navigationController?.popViewControllerAnimated(true)
     }
     
 //    func updateDateField(picker: UIDatePicker) {
 //        if self.actionType! == "edit" {
 //            let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-//            app.expenseList![self.expenseIndexPathRow!].date = picker.date
+//            app.expenseList[self.expenseIndexPathRow!].date = picker.date
 //            self.dateField.text = Helpers.formatDate(picker.date)
 //        }
 //    }
@@ -107,9 +107,9 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
 //        if self.actionType! == "edit" {
 //            let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 //            if let value = self.valueField.text.toInt() {
-//                app.expenseList![self.expenseIndexPathRow!].value = value
+//                app.expenseList[self.expenseIndexPathRow!].value = value
 //            } else {
-//                app.expenseList![self.expenseIndexPathRow!].value = 0
+//                app.expenseList[self.expenseIndexPathRow!].value = 0
 //            }
 //        }
 //    }

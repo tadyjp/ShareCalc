@@ -21,6 +21,9 @@
 		13CF2FC819D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */; };
 		13CF2FCA19D3033100A2BBF4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF2FC919D3033100A2BBF4 /* Helpers.swift */; };
 		13CFEF6519D4773D00569758 /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CFEF6419D4773D00569758 /* Dollar.swift */; };
+		13CFEF6819D6C31100569758 /* PayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CFEF6719D6C31100569758 /* PayListViewController.swift */; };
+		13CFEF6B19D6C37200569758 /* PayCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CFEF6A19D6C37200569758 /* PayCellViewController.swift */; };
+		13CFEF6D19D6C4F500569758 /* Payer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CFEF6C19D6C4F500569758 /* Payer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseEditSelectionTableViewController.swift; sourceTree = "<group>"; };
 		13CF2FC919D3033100A2BBF4 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		13CFEF6419D4773D00569758 /* Dollar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
+		13CFEF6719D6C31100569758 /* PayListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayListViewController.swift; sourceTree = "<group>"; };
+		13CFEF6A19D6C37200569758 /* PayCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayCellViewController.swift; sourceTree = "<group>"; };
+		13CFEF6C19D6C4F500569758 /* Payer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				13CFEF6419D4773D00569758 /* Dollar.swift */,
-				13C0E6A719D119F200FE6507 /* Expense.swift */,
 				13CF2FC919D3033100A2BBF4 /* Helpers.swift */,
+				13C0E6A719D119F200FE6507 /* Expense.swift */,
+				13CFEF6C19D6C4F500569758 /* Payer.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -107,10 +114,8 @@
 				13CADFC019D0E61600295E83 /* AppDelegate.swift */,
 				13C0E6A619D119D200FE6507 /* models */,
 				13CADFC519D0E61600295E83 /* ViewController.swift */,
-				13CADFE519D0F18000295E83 /* ExpenseViewController.swift */,
-				13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */,
-				13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */,
-				13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */,
+				13CFEF6619D6C2D300569758 /* ExpenseGroup */,
+				13CFEF6919D6C31500569758 /* PayGroup */,
 				13CADFCA19D0E61600295E83 /* Images.xcassets */,
 				13CADFCC19D0E61600295E83 /* LaunchScreen.xib */,
 				13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */,
@@ -142,6 +147,26 @@
 				13CADFD819D0E61700295E83 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13CFEF6619D6C2D300569758 /* ExpenseGroup */ = {
+			isa = PBXGroup;
+			children = (
+				13CADFE519D0F18000295E83 /* ExpenseViewController.swift */,
+				13CADFE719D0F54300295E83 /* ExpenseTableViewCell.swift */,
+				13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */,
+				13CF2FC719D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift */,
+			);
+			name = ExpenseGroup;
+			sourceTree = "<group>";
+		};
+		13CFEF6919D6C31500569758 /* PayGroup */ = {
+			isa = PBXGroup;
+			children = (
+				13CFEF6719D6C31100569758 /* PayListViewController.swift */,
+				13CFEF6A19D6C37200569758 /* PayCellViewController.swift */,
+			);
+			name = PayGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,13 +272,16 @@
 			files = (
 				13CADFE819D0F54300295E83 /* ExpenseTableViewCell.swift in Sources */,
 				13CADFC619D0E61600295E83 /* ViewController.swift in Sources */,
+				13CFEF6D19D6C4F500569758 /* Payer.swift in Sources */,
 				13C0E6AA19D1268C00FE6507 /* ExpenseEditTableViewController.swift in Sources */,
 				13CF2FC819D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift in Sources */,
 				13CF2FCA19D3033100A2BBF4 /* Helpers.swift in Sources */,
 				13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */,
 				13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */,
 				13CFEF6519D4773D00569758 /* Dollar.swift in Sources */,
+				13CFEF6819D6C31100569758 /* PayListViewController.swift in Sources */,
 				13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */,
+				13CFEF6B19D6C37200569758 /* PayCellViewController.swift in Sources */,
 				13C0E6A819D119F200FE6507 /* Expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

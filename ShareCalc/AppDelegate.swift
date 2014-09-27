@@ -14,10 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var expenseList: [Expense]?
+    var PersonList: [PersonList] = []
+    var expenseList: [Expense] = []
+    var payerList: [Payer] = []
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.expenseList.append(Expense(date: NSDate(), payer: "Yamada", type: "Highway", value: 25000))
+        self.expenseList.append(Expense(date: NSDate(), payer: "Suzuki", type: "Lunch", value: 12000))
+        self.expenseList.append(Expense(date: NSDate(), payer: "Yamada", type: "Railway", value: 19000))
+        self.expenseList.append(Expense(date: NSDate(), payer: "Kato", type: "Gas", value: 6700))
+        
         return true
     }
 
