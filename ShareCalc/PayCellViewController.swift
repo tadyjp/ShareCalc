@@ -14,9 +14,10 @@ class PayCellViewController: UITableViewCell {
     @IBOutlet weak var valueField: UILabel!
     @IBAction func touchValueUp(sender: AnyObject) {
     }
-    @IBOutlet weak var touchValueDown: UIButton!
+    @IBAction func touchValueDown(sender: AnyObject) {
+    }
     
-    @IBAction func touchChangeSwitch(sender: AnyObject) {
+    @IBAction func touchSmallChangeSwitch(sender: AnyObject) {
     }
     
     override func awakeFromNib() {

@@ -16,15 +16,7 @@ class PayListViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        if let payerList = app.payerList {
-            // Do nothing
-        } else {
-            app.payerList = Payer.generateList(fromExpenseList: app.expenseList)
-        }
-        println("app.payerList = \(app.payerList)")
-        
-//        self.payerListTable.estimatedRowHeight = 100.0
-//        self.payerListTable.rowHeight = UITableViewAutomaticDimension
+        app.payerList = Payer.generateList(app.payerList, expenseList: app.expenseList)
     }
 
     override func didReceiveMemoryWarning() {

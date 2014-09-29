@@ -11,25 +11,25 @@ import Foundation
 class Payer: Printable {
     var name: String
     var value: Int
+    var hasSmallChange: Bool
     
     init(name: String, value: Int) {
         self.name = name
         self.value = value
+        self.hasSmallChange = false
     }
     
     var description: String {
         return "Expense<name: '\(self.name)', value: \(self.value)>"
     }
     
-    class func generateList(#fromPayerList: [Payer]) -> [Payer] {
-        return []
-    }
-
-    class func generateList(#fromExpenseList: [Expense]) -> [Payer] {
-        var payers: [Payer] = []
-        for payerName in $.uniq(fromExpenseList.map({ (expense) in expense.payer })) {
-            payers.append(Payer(name: payerName, value: 0))
+    class func generateList(payerList: [Payer], expenseList: [Expense]) -> [Payer] {
+        var newPayerList: [Payer] = payerList
+        for expense in expenseList {
+            if !$.contains(newPayerList.map({$0.name}), value: expense.payer) {
+                newPayerList.append(Payer(name: expense.payer, value: 0))
+            }
         }
-        return payers
+        return newPayerList
     }
 }

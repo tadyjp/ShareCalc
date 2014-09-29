@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var PersonList: [PersonList] = []
     var expenseList: [Expense] = []
     var payerList: [Payer] = []
 
@@ -25,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.expenseList.append(Expense(date: NSDate(), payer: "Suzuki", type: "Lunch", value: 12000))
         self.expenseList.append(Expense(date: NSDate(), payer: "Yamada", type: "Railway", value: 19000))
         self.expenseList.append(Expense(date: NSDate(), payer: "Kato", type: "Gas", value: 6700))
+        
+        self.payerList = Payer.generateList(self.payerList, expenseList: self.expenseList)
         
         return true
     }
