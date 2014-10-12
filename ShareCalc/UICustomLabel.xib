@@ -48,8 +48,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="labelField" destination="QJm-dz-Ltc" id="P2f-MF-7zN"/>
-                <outlet property="valueField" destination="R3t-Dx-NFp" id="rgt-Wv-n9Z"/>
+                <outlet property="labelField" destination="QJm-dz-Ltc" id="bN6-dn-V4p"/>
+                <outlet property="valueField" destination="R3t-Dx-NFp" id="zo5-gU-wYS"/>
             </connections>
             <point key="canvasLocation" x="28" y="1"/>
         </view>

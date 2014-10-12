@@ -16,10 +16,7 @@ class PayListViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let customLabel = UIView.loadFromNibNamed("UICustomLabel") as UICustomLabel
-        customLabel.labelField.text = "total"
-        customLabel.valueField.text = "12,000"
-        self.totalVelueView.addSubview(customLabel)
+        self.totalVelueView.addSubview(UICustomLabel.render("total", value: "12,000"))
 
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         app.payerList = Payer.generateList(app.payerList, expenseList: app.expenseList)
