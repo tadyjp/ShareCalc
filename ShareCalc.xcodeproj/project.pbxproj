@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1313461819E0F18E007455F0 /* UICustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1313461719E0F18E007455F0 /* UICustomLabel.swift */; };
+		1313461C19E12A07007455F0 /* UICustomLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1313461B19E12A07007455F0 /* UICustomLabel.xib */; };
+		135CBF8519EA9BD500E96A33 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CBF8419EA9BD500E96A33 /* Extensions.swift */; };
 		13C0E6A819D119F200FE6507 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C0E6A719D119F200FE6507 /* Expense.swift */; };
 		13C0E6AA19D1268C00FE6507 /* ExpenseEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */; };
 		13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CADFC019D0E61600295E83 /* AppDelegate.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1313461719E0F18E007455F0 /* UICustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomLabel.swift; sourceTree = "<group>"; };
+		1313461B19E12A07007455F0 /* UICustomLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICustomLabel.xib; sourceTree = "<group>"; };
+		135CBF8419EA9BD500E96A33 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		13C0E6A719D119F200FE6507 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		13C0E6A919D1268C00FE6507 /* ExpenseEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseEditTableViewController.swift; sourceTree = "<group>"; };
 		13CADFBB19D0E61600295E83 /* ShareCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +84,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13C0E6A619D119D200FE6507 /* models */ = {
+		13C0E6A619D119D200FE6507 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				13CFEF6419D4773D00569758 /* Dollar.swift */,
@@ -86,7 +92,7 @@
 				13C0E6A719D119F200FE6507 /* Expense.swift */,
 				13CFEF6C19D6C4F500569758 /* Payer.swift */,
 			);
-			name = models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		13CADFB219D0E61600295E83 = {
@@ -112,14 +118,17 @@
 			children = (
 				13CADFC719D0E61600295E83 /* Main.storyboard */,
 				13CADFC019D0E61600295E83 /* AppDelegate.swift */,
-				13C0E6A619D119D200FE6507 /* models */,
+				13C0E6A619D119D200FE6507 /* Models */,
 				13CADFC519D0E61600295E83 /* ViewController.swift */,
+				135CBF8419EA9BD500E96A33 /* Extensions.swift */,
 				13CFEF6619D6C2D300569758 /* ExpenseGroup */,
 				13CFEF6919D6C31500569758 /* PayGroup */,
 				13CADFCA19D0E61600295E83 /* Images.xcassets */,
 				13CADFCC19D0E61600295E83 /* LaunchScreen.xib */,
 				13CADFC219D0E61600295E83 /* ShareCalc.xcdatamodeld */,
 				13CADFBE19D0E61600295E83 /* Supporting Files */,
+				1313461719E0F18E007455F0 /* UICustomLabel.swift */,
+				1313461B19E12A07007455F0 /* UICustomLabel.xib */,
 			);
 			path = ShareCalc;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 			files = (
 				13CADFC919D0E61600295E83 /* Main.storyboard in Resources */,
 				13CADFCE19D0E61600295E83 /* LaunchScreen.xib in Resources */,
+				1313461C19E12A07007455F0 /* UICustomLabel.xib in Resources */,
 				13CADFCB19D0E61600295E83 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,8 +287,10 @@
 				13CF2FC819D186BB00A2BBF4 /* ExpenseEditSelectionTableViewController.swift in Sources */,
 				13CF2FCA19D3033100A2BBF4 /* Helpers.swift in Sources */,
 				13CADFE619D0F18000295E83 /* ExpenseViewController.swift in Sources */,
+				1313461819E0F18E007455F0 /* UICustomLabel.swift in Sources */,
 				13CADFC419D0E61600295E83 /* ShareCalc.xcdatamodeld in Sources */,
 				13CFEF6519D4773D00569758 /* Dollar.swift in Sources */,
+				135CBF8519EA9BD500E96A33 /* Extensions.swift in Sources */,
 				13CFEF6819D6C31100569758 /* PayListViewController.swift in Sources */,
 				13CADFC119D0E61600295E83 /* AppDelegate.swift in Sources */,
 				13CFEF6B19D6C37200569758 /* PayCellViewController.swift in Sources */,
