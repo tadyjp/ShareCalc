@@ -1,5 +1,5 @@
 //
-//  ExpenseEditTableViewController.swift
+//  ExpenseDetailViewController.swift
 //  ShareCalc
 //
 //  Created by tady on 9/23/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate {
+class ExpenseDetailViewController: UITableViewController, UITextFieldDelegate {
 
     var expenseIndexPathRow: Int?
     var actionType: String?
@@ -182,7 +182,7 @@ class ExpenseEditTableViewController: UITableViewController, UITextFieldDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         self.updateEditingExpense()
         
-        let expenseEditSelectionTableViewController: ExpenseEditSelectionTableViewController = segue.destinationViewController as ExpenseEditSelectionTableViewController
+        let expenseEditSelectionTableViewController: ExpenseEditViewController = segue.destinationViewController as ExpenseEditViewController
         expenseEditSelectionTableViewController.editingExpense = self.editingExpense!
 
         switch segue.identifier {

@@ -16,7 +16,7 @@ class PayListViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.totalVelueView.addSubview(UICustomLabel.render("total", value: "12,000"))
+        self.totalVelueView.addSubview(ValueLabelView.render("total", value: "12,000"))
 
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         app.payerList = Payer.generateList(app.payerList, expenseList: app.expenseList)
@@ -35,7 +35,7 @@ class PayListViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         
-        let cell: PayCellViewController = self.payerListTable.dequeueReusableCellWithIdentifier("payCell") as PayCellViewController
+        let cell: PayTableViewCell = self.payerListTable.dequeueReusableCellWithIdentifier("payCell") as PayTableViewCell
         cell.nameField.text = app.payerList[indexPath.row].name
         cell.valueField.text = String(app.payerList[indexPath.row].value)
         return cell

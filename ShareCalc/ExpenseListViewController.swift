@@ -1,5 +1,5 @@
 //
-//  ExpenseViewController.swift
+//  ExpenseListViewController.swift
 //  ShareCalc
 //
 //  Created by tady on 9/23/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ExpenseListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var expenseTableView: UITableView!
 
@@ -45,7 +45,7 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
-        let cell: ExpenseTableViewCell = self.expenseTableView.dequeueReusableCellWithIdentifier("ExpenseCell") as ExpenseTableViewCell
+        let cell: ExpenseTableViewCell = self.expenseTableView.dequeueReusableCellWithIdentifier("ExpenseTableViewCell") as ExpenseTableViewCell
         cell.dateField.text = app.expenseList[indexPath.row].dateWithFormat
         cell.valueField.text = String(app.expenseList[indexPath.row].value)
         cell.typeField.text = app.expenseList[indexPath.row].type
@@ -57,7 +57,7 @@ class ExpenseViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let expenseEditViewController: ExpenseEditTableViewController = segue.destinationViewController as ExpenseEditTableViewController
+        let expenseEditViewController: ExpenseDetailViewController = segue.destinationViewController as ExpenseDetailViewController
 
         switch segue.identifier {
         case "toExpenseEdit":

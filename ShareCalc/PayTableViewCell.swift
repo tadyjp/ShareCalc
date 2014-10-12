@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PayCellViewController: UITableViewCell {
+class PayTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameField: UILabel!
     @IBOutlet weak var valueField: UILabel!

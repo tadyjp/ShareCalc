@@ -1,5 +1,5 @@
 //
-//  ExpenseEditSelectionTableViewController.swift
+//  ExpenseEditViewController.swift
 //  ShareCalc
 //
 //  Created by tady on 9/23/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpenseEditSelectionTableViewController: UITableViewController {
+class ExpenseEditViewController: UITableViewController {
 
     var editingExpense: Expense?
     var choiceList: [String]?
