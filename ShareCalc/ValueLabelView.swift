@@ -13,10 +13,10 @@ class ValueLabelView: UIView {
     @IBOutlet weak var labelField: UILabel!
     @IBOutlet weak var valueField: UILabel!
     
-    class func render(label: String, value: String) -> UIView {
-        let customLabel = UIView.loadFromNib("ValueLabelView") as ValueLabelView
-        customLabel.labelField.text = label
-        customLabel.valueField.text = value
-        return customLabel
+    class func render(label: String, value: String) -> ValueLabelView! {
+        let view = UIView.loadFromNib("ValueLabelView") as ValueLabelView
+        view.labelField.text = label
+        view.valueField.text = value
+        return view
     }
 }

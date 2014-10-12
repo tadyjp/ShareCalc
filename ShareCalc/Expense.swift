@@ -28,4 +28,9 @@ class Expense: Printable {
     var dateWithFormat: String {
         return Helpers.formatDate(self.date)
     }
+    
+    var valueWithFormat: String {
+        return Helpers.formatValue(self.value)
+    }
+
 }

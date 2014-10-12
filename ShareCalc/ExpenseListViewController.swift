@@ -11,25 +11,34 @@ import UIKit
 class ExpenseListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var expenseTableView: UITableView!
-
-    @IBOutlet weak var totalValue: UILabel!
-    @IBOutlet weak var totalItems: UILabel!
-    @IBOutlet weak var totalPayers: UILabel!
+    @IBOutlet weak var totalValueLabelViewWrapper: UIView!
+    @IBOutlet weak var totalItemsLabelViewWrapper: UIView!
+    @IBOutlet weak var totalPayersLabelViewWrapper: UIView!
+    
+    var totalValueLabelView: ValueLabelView!
+    var totalItemsLabelView: ValueLabelView!
+    var totalPayersLabelView: ValueLabelView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.totalValueLabelView = ValueLabelView.render("total", value: "0")
+        self.totalValueLabelViewWrapper.addSubview(self.totalValueLabelView)
+        self.totalItemsLabelView = ValueLabelView.render("items", value: "0")
+        self.totalItemsLabelViewWrapper.addSubview(self.totalItemsLabelView)
+        self.totalPayersLabelView = ValueLabelView.render("payers", value: "0")
+        self.totalPayersLabelViewWrapper.addSubview(self.totalPayersLabelView)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.expenseTableView.reloadData()
         
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        self.totalValue.text = String(app.expenseList.reduce(0, combine: {$0 + $1.value}))
-        self.totalItems.text = String(app.expenseList.count)
-        self.totalPayers.text = String($.uniq(app.expenseList.map({ (item) in item.payer })).count)
+        self.totalValueLabelView.valueField.text = Helpers.formatValue(app.expenseList.reduce(0, combine: {$0 + $1.value}))
+        self.totalItemsLabelView.valueField.text = String(app.expenseList.count)
+        self.totalPayersLabelView.valueField.text = String($.uniq(app.expenseList.map({ (item) in item.payer })).count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +56,7 @@ class ExpenseListViewController: UIViewController, UITableViewDelegate, UITableV
 
         let cell: ExpenseTableViewCell = self.expenseTableView.dequeueReusableCellWithIdentifier("ExpenseTableViewCell") as ExpenseTableViewCell
         cell.dateField.text = app.expenseList[indexPath.row].dateWithFormat
-        cell.valueField.text = String(app.expenseList[indexPath.row].value)
+        cell.valueField.text = app.expenseList[indexPath.row].valueWithFormat
         cell.typeField.text = app.expenseList[indexPath.row].type
         cell.payerField.text = app.expenseList[indexPath.row].payer
         return cell;

@@ -11,17 +11,29 @@ import UIKit
 class PayListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var payerListTable: UITableView!
-    @IBOutlet weak var totalVelueView: UIView!
+    @IBOutlet weak var totalValueLabelViewWrapper: UIView!
+
+    var totalValueLabelView: ValueLabelView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.totalVelueView.addSubview(ValueLabelView.render("total", value: "12,000"))
+        self.totalValueLabelView = ValueLabelView.render("total", value: "0")
+        self.totalValueLabelViewWrapper.addSubview(self.totalValueLabelView)
 
         let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         app.payerList = Payer.generateList(app.payerList, expenseList: app.expenseList)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let app: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+
+        self.totalValueLabelView.valueField.text =
+            Helpers.formatValue(app.payerList.reduce(0, combine: {$0 + $1.value}))
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,7 +49,7 @@ class PayListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell: PayTableViewCell = self.payerListTable.dequeueReusableCellWithIdentifier("payCell") as PayTableViewCell
         cell.nameField.text = app.payerList[indexPath.row].name
-        cell.valueField.text = String(app.payerList[indexPath.row].value)
+        cell.valueField.text = Helpers.formatValue(app.payerList[indexPath.row].value)
         return cell
     }
     

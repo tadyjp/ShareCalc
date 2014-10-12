@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Payer: Printable {
+class Payer: Printable, Equatable {
     var name: String
     var value: Int
     var hasSmallChange: Bool
@@ -26,10 +26,23 @@ class Payer: Printable {
     class func generateList(payerList: [Payer], expenseList: [Expense]) -> [Payer] {
         var newPayerList: [Payer] = payerList
         for expense in expenseList {
-            if !$.contains(newPayerList.map({$0.name}), value: expense.payer) {
-                newPayerList.append(Payer(name: expense.payer, value: 0))
+            let payerInList = $.find(newPayerList, iterator: {
+                (payer: Payer) in
+                return payer.name == expense.payer
+            })
+
+            if let payer = payerInList {
+                payer.value += expense.value
+            } else {
+                newPayerList.append(Payer(name: expense.payer, value: expense.value))
             }
         }
         return newPayerList
     }
 }
+
+func == (lhs: Payer, rhs: Payer) -> Bool {
+    return lhs.name == rhs.name
+}
+
+// TODO: merge payer and expense

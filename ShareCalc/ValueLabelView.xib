@@ -5,12 +5,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ValueLabelView" customModule="ShareCalc" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ValueLabelView" customModule="ShareCalc" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ub3-qp-6gX">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJm-dz-Ltc">
                     <rect key="frame" x="24" y="0.0" width="42" height="21"/>
                     <constraints>
@@ -22,7 +26,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAO-y1-p5F">
                     <rect key="frame" x="0.0" y="23" width="90" height="1"/>
-                    <color key="backgroundColor" red="0.32992674570000002" green="0.44956457230000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.38312020948503245" blue="0.16440902395362234" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3t-Dx-NFp">
                     <rect key="frame" x="0.0" y="31" width="90" height="21"/>
@@ -48,8 +52,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="labelField" destination="QJm-dz-Ltc" id="bN6-dn-V4p"/>
-                <outlet property="valueField" destination="R3t-Dx-NFp" id="zo5-gU-wYS"/>
+                <outlet property="labelField" destination="QJm-dz-Ltc" id="XZQ-Tr-iNi"/>
+                <outlet property="valueField" destination="R3t-Dx-NFp" id="aDb-Lu-3Iv"/>
             </connections>
             <point key="canvasLocation" x="28" y="1"/>
         </view>

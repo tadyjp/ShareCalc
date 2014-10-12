@@ -22,4 +22,15 @@ class Helpers {
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         return dateFormatter.dateFromString(date)!
     }
+    
+    class func formatValue(value: Int) -> String {
+        var num = NSNumber(integer: value)
+        
+        var formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        formatter.groupingSeparator = ","
+        formatter.groupingSize = 3
+        
+        return "¥ " + formatter.stringFromNumber(num)
+    }
 }
